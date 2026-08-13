@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-navy-950: #0d0d0c;
+  --color-navy-900: #161615;
+  --color-navy-800: #242422;
+  --color-navy-700: #35342f;
+  --color-navy-600: #48463f;
+
+  --color-charcoal-900: #1c1c1a;
+  --color-charcoal-800: #2b2b28;
+  --color-charcoal-700: #3d3d39;
+  --color-charcoal-500: #6b6a64;
+  --color-charcoal-300: #a3a29b;
+
+  --color-off-white: #f6f5f2;
+  --color-off-white-dim: #eae9e4;
+  --color-paper: #faf9f7;
+
+  --color-gold-700: #55534b;
+  --color-gold-600: #201f1b;
+  --color-gold-500: #8c887d;
+  --color-gold-400: #f8f7f4;
+  --color-gold-300: #e6e3d9;
+  --color-gold-100: #e7e5df;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-600: var(--color-navy-600);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-charcoal-900: var(--color-charcoal-900);
+  --color-charcoal-800: var(--color-charcoal-800);
+  --color-charcoal-700: var(--color-charcoal-700);
+  --color-charcoal-500: var(--color-charcoal-500);
+  --color-charcoal-300: var(--color-charcoal-300);
+
+  --color-off-white: var(--color-off-white);
+  --color-off-white-dim: var(--color-off-white-dim);
+  --color-paper: var(--color-paper);
+
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-100: var(--color-gold-100);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 1s ease forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-off-white);
+  color: var(--color-navy-900);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-navy-950);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-noise {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
 }
