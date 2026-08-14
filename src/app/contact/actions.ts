@@ -104,7 +104,7 @@ export async function submitEnquiry(
 
     const { error } = await resend.emails.send({
       from: fromAddress,
-      to: CONTACT.email,
+      to: process.env.ENQUIRY_TO_EMAIL || CONTACT.email,
       replyTo: data.email,
       subject: `New enquiry: ${data.areaOfInterest} — ${data.fullName}`,
       html: `
