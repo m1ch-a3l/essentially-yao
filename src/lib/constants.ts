@@ -11,7 +11,7 @@ export const NAV_LINKS = [
 export const CONTACT = {
   email: "hello@essentiallyyao.com",
   phone: "+233 244 304940",
-  phoneHref: "+233244304940",
+  phoneHref: "+233244683114",
   linkedin: "https://www.linkedin.com/company/essentiallyyao",
   hours: "Monday – Friday, 8:30am – 5:30pm GMT",
 } as const;
